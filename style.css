@@ -1,0 +1,171 @@
+body {
+  min-height: 100vh;;
+  background: linear-gradient(135deg, #43cea2 0%, #185a9d 30%, #33cd7d 90%);
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: white;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #204642;
+  text-shadow:
+    0 0 5px #00ffe7,
+    0 0 10px #00ffe7,
+    0 0 20px #00ff99,
+    0 0 30px #00ff99,
+    0 0 40px #00ff99;
+  margin-top: 30px;
+}
+
+.game-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* mezery mezi bloky */
+  font-size: 20px;
+  margin-bottom: 10px;
+  flex-wrap: wrap; /* pokud je málo místa, zlomí se hezky */
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #b5d7d2;
+  border: 2px solid #66a4a8;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 rgba(33, 150, 243, 0.7);
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.06);
+    box-shadow: 0 0 20px rgba(33, 150, 243, 0.4);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 rgba(33, 150, 243, 0);
+  }
+}
+
+#startButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 16px 36px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s ease;
+  animation: pulse 1.8s infinite;
+}
+
+#startButton:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  background: linear-gradient(135deg, #2bc0e4, #eaecc6);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(72, 239, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(72, 239, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(72, 239, 255, 0);
+  }
+}
+.grid-wrapper, h1, #scoreboard, .legend-box {
+  position: relative;
+  z-index: 1;
+}
+
+.grid-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dino1::after {
+  content: '🦖'; /* normální dino */
+  font-size: 2.5rem;
+  display: block;
+  text-align: center;
+  line-height: 100px;
+}
+
+.dino2::after {
+  content: '🦕'; /* vzácný dino */
+  font-size: 2.5rem;
+  display: block;
+  text-align: center;
+  line-height: 100px;
+}
+
+.fire::after {
+  content: '☄️';
+  font-size: 2.5rem;
+  display: block;
+  text-align: center;
+  line-height: 100px;
+}
+
+.legend-box {
+  margin: 30px auto;
+  max-width: 300px;
+  text-align: left;
+  font-size: 1rem;
+  background: #a6deffcc;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.legend-icon {
+  font-size: 1.6rem;
+  margin-right: 10px;
+}
+
+.legend-text {
+  color: #163245;
+}

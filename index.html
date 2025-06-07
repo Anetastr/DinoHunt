@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />   
+  <title>🦕 DinoHunt 🦖</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>🦕 DinoHunt 🦖</h1>
+
+  <div class="game-info">
+    <span>Skóre: <span id="score">0</span></span>
+    <span>Čas: <span id="time">25</span>s</span>
+    <span>Level: <span id="level">1</span></span>
+  </div>
+  
+    <div id="legend" class="legend-box">
+      <div class="legend-item">
+        <span class="legend-icon">🦖</span>
+        <span class="legend-text">Dino (+1 bod)</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-icon">🦕</span>
+        <span class="legend-text">SuperDino (+3 body)</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-icon">☄️</span>
+        <span class="legend-text">Fire – ztrácíš skóre</span>
+      </div>
+    </div>
+
+<div class="grid-wrapper">
+
+  <div class="grid">
+    <div class="square" id="1"></div>
+    <div class="square" id="2"></div>
+    <div class="square" id="3"></div>
+    <div class="square" id="4"></div>
+    <div class="square" id="5"></div>
+    <div class="square" id="6"></div>
+    <div class="square" id="7"></div>
+    <div class="square" id="8"></div>
+    <div class="square" id="9"></div>
+  </div>
+
+  <button id="startButton">Hrát hru</button>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
